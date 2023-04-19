@@ -3,7 +3,20 @@ import axios from 'axios';
 
 import "./App.css";
 
-import NasaPhoto from "./Components/NasaPhoto";
+import NasaPhoto from "./Components/NasaPhoto.js";
+
+import styled from 'styled-components';
+
+const StyledNasa = styled.div`
+width: 100%;
+display: flex;
+justify-content: center;
+padding: 8px;
+border-bottom: 2px solid white;
+
+background-color: "blue";
+`
+
 
 const dummyData = {
   date:"2023-04-13",
@@ -23,9 +36,9 @@ function App() {
     .catch(err => console.error(err))
   }, [])
   return (
-    <div className="App">
+    <StyledNasa className="App">
       { data && <NasaPhoto photo={data} /> }
-    </div>
+    </StyledNasa>
   );
 }
 
